@@ -1,0 +1,3 @@
+sdkconfig.ci
+sdkconfig.old
+*.o
