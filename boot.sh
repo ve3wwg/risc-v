@@ -1,6 +1,6 @@
 #!/bin/bash
 
-exec /usr/local/bin/qemu-system-riscv64 \
+exec qemu-system-riscv64 \
    -nographic \
    -machine virt \
    -smp 2 \
