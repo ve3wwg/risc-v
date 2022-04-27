@@ -3,10 +3,10 @@
 extern void convtemp();
 
 int temp_f10 = 400;	// Fahrenheit degrees * 10
-int temp_c10 = 0;	// Computed result: Celcius * 10
+int temp_c10 = 0;	// Computed result: Celsius * 10
 
-int
-main(int argc,char **argv) {
+void
+app_main(void) {
 
 	convtemp();	// Convert temp_f10 to temp_c10
 
@@ -15,5 +15,4 @@ main(int argc,char **argv) {
 		temp_f10 % 10,
 		temp_c10 / 10,
 		temp_c10 % 10);
-	return 0;
 }

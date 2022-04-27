@@ -10,5 +10,5 @@ convtemp:
 	li	t1,18			# t1 = 1.8 * 10
 	div	t0,t0,t1		# t0 = F * 100 / 1.8 * 10
 	lui	t1,%hi(temp_c10)
-	sw	t0,%lo(temp_c10)(t1)	# t0 = Celcius * 10
+	sw	t0,%lo(temp_c10)(t1)	# t0 = Celsius * 10
 	ret				
