@@ -1,1 +1,1 @@
-idf_component_register(SRCS "main.c" "celcius2.S" INCLUDE_DIRS "")
+idf_component_register(SRCS "main.c" "celsius2.S" INCLUDE_DIRS "")
