@@ -3,6 +3,6 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := celsius
+PROJECT_NAME := jal
 
 include $(IDF_PATH)/make/project.mk

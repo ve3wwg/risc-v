@@ -3,6 +3,6 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := add3
+PROJECT_NAME := aligned
 
 include $(IDF_PATH)/make/project.mk
