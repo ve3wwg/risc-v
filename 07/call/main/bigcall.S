@@ -21,8 +21,8 @@ bigcall:
 	add	a0,a0,a1	# Add low order arg2 (int64) to arg1
 	add	a0,a0,a3	# Add arg3 to arg1
 	add	a0,a0,a4	# Add low order arg4 (int64) to arg1
-	add	a0,a0,a6	# Add arg6 to arg1
-	add	a0,a0,a7	# Add low order arg7 (int64) to arg1
+	add	a0,a0,a6	# Add arg5 to arg1
+	add	a0,a0,a7	# Add low order arg6 (int64) to arg1
 
 	lw	t0,seven(fp)	# Load arg7
 	add	a0,a0,t0	# Add arg7 to arg1
