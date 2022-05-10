@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdint.h>
 
+#pragma GCC optimize("-O3")
+
 extern int bigcall(
 	int32_t one,
 	int64_t two,
@@ -15,12 +17,7 @@ extern int bigcall(
 
 void
 app_main(void) {
-
-	printf("Calling bigcall()..\n");
-	fflush(stdout);
-
 	int rc = bigcall(101,102,103,104,105,106,107,108,109);
 
 	printf("bigcall() returned %d\n",rc);
-	fflush(stdout);
 }
