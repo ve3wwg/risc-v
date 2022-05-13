@@ -1,8 +1,10 @@
 	.global	bigcall
 
 	.struct	0
-svfp:	.space	4
-svra:	.space	4
+svfp:	.space	4		# Save register fp/s0
+svra:	.space	4		# Save register ra
+var1:	.space	4		# Sample stack variable
+	.balign	8		# Make sz mod 8
 sz	=	. - svfp
 
 	.struct	0
@@ -30,8 +32,10 @@ bigcall:
 	lw	t0,eight(fp)	# Load arg8 (low order of int64)
 	add	a0,a0,t0	# a0 += arg8
 
-	lw	t0,nine(fp)	# Load arg8
+	lw	t0,nine(fp)	# Load arg9
 	add	a0,a0,t0	# Sum is return value
+
+	sw	x0,var1(sp)	# Zero sample stack variable
 
 	lw	ra,svra(sp)	# Restore ra
 	lw	fp,svfp(sp)	# Restore fp/s0
