@@ -1,8 +1,10 @@
 	.global	bigcall2, printf
 
 	.struct	0
-svfp:	.space	4
-svra:	.space	4
+svfp:	.space	4		# Save register fp
+svra:	.space	4		# Save register ra
+var1:	.space	4		# Example stack variable
+	.balign	8		# Keep stack size mod 8
 sz	=	. - svfp
 
 	.struct	0
@@ -35,12 +37,17 @@ bigcall2:
 
 #	Print the result
 
-	la	a0, fmt
+	la	a0, fmt		# Pointer address to format string
+				# a1 already has the int to print
 	call	printf	
+	sw	a0,var1(sp)	# Save return value to var1 from print
+
+# 	Epilogue
 
 	lw	ra,svra(sp)	# Restore ra
 	lw	fp,svfp(sp)	# Restore fp/s0
 	addi	sp,sp,+sz	# Restore sp
 	ret
 
+	.section .rodata
 fmt:	.string	"bigcall2() computed a sum of %d\n"
