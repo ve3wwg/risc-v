@@ -13,7 +13,7 @@ main(int argc,char **argv) {
 	int64_t bits;
 	int oddpar;
 		
-	for ( unsigned ux=0; tests[ux] < 999999ll; ++ux ) {
+	for ( unsigned ux=0; tests[ux] != 999999ll; ++ux ) {
 		bits = tests[ux];
 		oddpar = odd_parity(bits);
 		printf("odd_parity(%20lld) (0x%016llX) returned %d\n",
