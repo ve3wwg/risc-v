@@ -7,9 +7,8 @@ loadh:	lh	a0,hword	# Load half word
 	ret
 loadw:	lw	a0,word		# Load a word
 	ret
-loadd:	lw	a0,dword	# Load lower word of dword
-	lw	a1,dword+4	# Load upper word of dword
-	ret			# return value in a0
+loadd:	ld	a0,dword	# Load double word
+	ret
 
 	.data
 byte:	.byte	1
