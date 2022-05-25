@@ -2,11 +2,11 @@
 	.text
 
 # ARGUMENTS:
-#	a0, a1	int64_t operand 1
-#	a2, a3	int64_t operand 2
+#	a0, a1	uint64_t operand 1
+#	a2, a3	uint64_t operand 2
 #
 # RETURNS:
-#	a0, a1	int64_t sum
+#	a0, a1	uint64_t sum
 #
 add64:	add	a0,a0,a2	# Add low order 32 bits
 	sltu	a7,a0,a2	# a7 = a0 < a2 ? 1 : 0
