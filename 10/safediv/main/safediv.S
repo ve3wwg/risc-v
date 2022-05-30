@@ -16,7 +16,7 @@
 #
 
 safediv:
-	mv	t3,a0		# t3 = divident
+	mv	t3,a0		# t3 = dividend
 	mv	t4,a1		# t4 = divisor
 
 	li	t5,0		# t5 = true when overflow
