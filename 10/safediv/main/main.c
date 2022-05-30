@@ -2,8 +2,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#pragma GCC optimize("-O3")
-
 extern int32_t safediv(
 	int32_t divident,
 	int32_t divisor,
@@ -29,7 +27,9 @@ app_main(void) {
 		{ 0, 0 }
 	};
 		
-	for ( unsigned ux=0; tests[ux].dividend || tests[ux].divisor; ++ux ) {
+	for ( unsigned ux=0; 
+	  tests[ux].dividend || tests[ux].divisor;
+	  ++ux ) {
 		int32_t dividend = tests[ux].dividend;
 		int32_t divisor = tests[ux].divisor;
 		int32_t quotient, remainder;
@@ -38,7 +38,8 @@ app_main(void) {
 		quotient = safediv(dividend,divisor,
 			&remainder,&divbyzero,&overflow);
 
-		printf("%d / %d => %d remainder %d; divbyzero=%d, overflow=%d\n",
+		printf("%d / %d => %d remainder %d; "
+			"divbyzero=%d, overflow=%d\n",
 			dividend, divisor, quotient, remainder,
 			divbyzero, overflow);
 	}
