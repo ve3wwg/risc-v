@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <assert.h>
 
 extern char *strncpy32(char *dest,char const *src,size_t n);
 
