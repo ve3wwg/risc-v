@@ -18,7 +18,7 @@ main(int argc,char **argv) {
 		{ 0, 0 }
 	};
 	
-	for ( unsigned ux=0; tests[ux] != 0; ++ux ) {
+	for ( unsigned ux=0; tests[ux].n != 0; ++ux ) {
 		uint64_t ncr = nCr(tests[ux].n,tests[ux].r);
 		printf("C(n=%lu,r=%lu) => %lu\n",
 			tests[ux].n,
