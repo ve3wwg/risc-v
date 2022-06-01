@@ -6,23 +6,48 @@ extern void identm(void *matrix,unsigned n);
 void
 app_main(void) {
 	{
-		int matrix[3][3];
+		unsigned const n=3;
+		int matrix[n][n];
 
-		for ( unsigned ux=0; ux<3; ++ux ) {
-			for ( unsigned uy=0; uy<3; ++uy ) {
+		for ( unsigned ux=0; ux<n; ++ux ) {
+			for ( unsigned uy=0; uy<n; ++uy ) {
 				matrix[ux][uy] = 13;
 			}
 		}
 
-		identm(&matrix,3);
+		identm(&matrix,n);
 
-		for ( unsigned ux=0; ux<3; ++ux ) {
+		printf("%u x %u identity matrix:\n",n,n);
+		for ( unsigned ux=0; ux<n; ++ux ) {
 			putchar('[');
-			for ( unsigned uy=0; uy<3; ++uy ) {
+			for ( unsigned uy=0; uy<n; ++uy ) {
 				printf("%3d ",matrix[ux][uy]);
 			}
 			puts("]");
 		}
 	}
+	{
+		unsigned const n=6;
+		int matrix[n][n];
+
+		for ( unsigned ux=0; ux<n; ++ux ) {
+			for ( unsigned uy=0; uy<n; ++uy ) {
+				matrix[ux][uy] = 13;
+			}
+		}
+
+		identm(&matrix,n);
+
+		printf("%u x %u identity matrix:\n",n,n);
+		for ( unsigned ux=0; ux<n; ++ux ) {
+			putchar('[');
+			for ( unsigned uy=0; uy<n; ++uy ) {
+				printf("%3d ",matrix[ux][uy]);
+			}
+			puts("]");
+		}
+	}
+
+	puts("Done");
 	fflush(stdout);
 }
