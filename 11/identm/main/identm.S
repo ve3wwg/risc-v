@@ -1,13 +1,11 @@
 	.global	identm
 	.text
 
+#	extern void identm(void *matrix,unsigned n)
+#
 # ARGUMENTS:
 #	a0	Pointer to int matrix[n][n]
 #	a1	unsigned n
-#
-# RETURNS:
-#	void
-#
 
 identm:	mul	t1,a1,a1	# t1 = total elements
 	li	t0,4		# sizeof(int) = 4
