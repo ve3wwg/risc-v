@@ -9,12 +9,6 @@ app_main(void) {
 		unsigned const n=3;
 		int matrix[n][n];
 
-		for ( unsigned ux=0; ux<n; ++ux ) {
-			for ( unsigned uy=0; uy<n; ++uy ) {
-				matrix[ux][uy] = 13;
-			}
-		}
-
 		identm(&matrix,n);
 
 		printf("%u x %u identity matrix:\n",n,n);
@@ -29,12 +23,6 @@ app_main(void) {
 	{
 		unsigned const n=6;
 		int matrix[n][n];
-
-		for ( unsigned ux=0; ux<n; ++ux ) {
-			for ( unsigned uy=0; uy<n; ++uy ) {
-				matrix[ux][uy] = 13;
-			}
-		}
 
 		identm(&matrix,n);
 
