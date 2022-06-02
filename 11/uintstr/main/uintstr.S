@@ -28,4 +28,4 @@ loop:	div	t4,a0,t1	# t4 = a0 / 10
 	bnez	a0,loop
 
 smlbuf:	mv	a0,t5		# Return addr of first char
-nope:	ret
+	ret
