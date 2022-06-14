@@ -13,7 +13,7 @@ main(int argc,char **argv) {
 
 		double celsius = fconvtemp(tests[ux],&flags);
 
-		printf("%.1lf -> %.1lf C (flags = 0x%04X)\n",
+		printf("%.1lf F -> %.1lf C (flags = 0x%04X)\n",
 			tests[ux], celsius, flags);
 	}
 	return 0;
