@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gcc -dM -E ${1:--} </dev/null
