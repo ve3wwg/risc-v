@@ -10,6 +10,6 @@ app_main(void) {
 
 	exten = extensions(buf,sizeof buf,&bits);	
 
-	printf("exten = 0x%06X, %u bits, '%s'\n",
-		exten, bits, buf);
+	printf("exten = 0x%06X, %u bits, RV%u%s\n",
+		exten, bits, bits, buf);
 }
