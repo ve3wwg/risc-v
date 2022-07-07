@@ -49,16 +49,14 @@ extensions:
 #
 	li	t1,'A'
 	mv	t2,a0		# t2 = a0
-loop:	bgeu	t6,a6,xit	# Branch if at end buf
-	andi	t5,t2,1		# Bit set?
+loop:	andi	t5,t2,1		# Bit set?
 	beq	t5,x0,4f	# Branch if zero bit
-	sb	t1,0(t6)	# Store char to buf
-	addi	t6,t6,1		# ++buf ptr
+	jal	t0,putch	# Put character t1
 4:	addi	t1,t1,1		# ++t1 (ascii char)
 	srli	t2,t2,1		# t2 >>= 1
-	bne	t2,x0,loop
-	bgeu	t6,a6,xit	# Buf limit check
-	sb	x0,0(t6)	# buf[x] = nul byte
+	bne	t2,x0,loop	# Loop until all bits
+	li	t1,0		# Load nul byte
+	jal	t0,putch	# Put nul byte
 xit:	ret	
 #
 #	Internal routine: returns via t0
