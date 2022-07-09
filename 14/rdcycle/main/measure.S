@@ -12,8 +12,7 @@
 measure:
 	li	a1,99		# Some number
 	li	a2,10		# ten
-	beqz	a0,1f
-
+	beqz	a0,1f		# If mul is false, jump to 1
 #
 #	Multiply by ten with mul opcode
 #
@@ -21,7 +20,6 @@ measure:
 	mul	t0,a1,a2	# 99 * 10 -> 136 cycles
 	csrr	t3,0x7E2
 	j	xit
-
 #
 #	Multiply by ten without mul opcode
 #
