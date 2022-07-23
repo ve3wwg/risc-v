@@ -13,4 +13,5 @@ app_main(void) {
 		cycles = measure(0);
 		printf("shift   cycles = %u\n",cycles);
 	}
+	fflush(stdout);
 }
