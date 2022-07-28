@@ -1,15 +1,13 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#pragma optimize GCC("-O3");
-
 extern uint32_t measure(int mul);
 
 void
 app_main(void) {
 	uint32_t cycles;
 
-	asm ( "nop" );
+	asm volatile ( "nop" );
 
 	for ( int x=0; x<10; ++x ) {
 		cycles = measure(1);
