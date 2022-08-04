@@ -12,7 +12,7 @@ app_main(void) {
 		" sw t0,%0\n"		// m = t0
 		: "=m" (m)		// Outputs
 		: "m" (a), "m" (b)	// Inputs
-		: "a0", "a1", "t0"
+		: "a0", "a1", "t0"	// Clobbers
 	);
 
 	printf("%u * %u => %u\n",a,b,m);
